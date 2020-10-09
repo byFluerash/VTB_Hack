@@ -13,7 +13,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/calc"
-        android:icon="@drawable/ic_calc"
-        android:title="@string/calc"
+        android:icon="@drawable/ic_profile_outline"
+        android:title="@string/profile"
         app:showAsAction="ifRoom" />
 </menu>
