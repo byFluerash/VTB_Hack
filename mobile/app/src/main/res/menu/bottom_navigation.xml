@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/credit"
+        android:icon="@drawable/ic_credit"
+        android:title="@string/credits"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/autocredit"
+        android:icon="@drawable/ic_autocredit"
+        android:title="@string/car"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/calc"
+        android:icon="@drawable/ic_calc"
+        android:title="@string/calc"
+        app:showAsAction="ifRoom" />
+</menu>

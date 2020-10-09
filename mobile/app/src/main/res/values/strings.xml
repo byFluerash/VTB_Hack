@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">VTB_Hack</string>
+    <string name="vtp_auto_caps">ВТБ АВТО</string>
+    <string name="car_list">Список авто</string>
+    <string name="price">Цена</string>
+    <string name="name">Название</string>
+    <string name="credits">Кредиты</string>
+    <string name="car">Авто</string>
+    <string name="calc">Калькулятор</string>
+    <string name="carName">%1$s</string>
+    <string name="carPrice">от %1$s ₽</string>
+    <string name="brand">%1$s</string>
 </resources>
