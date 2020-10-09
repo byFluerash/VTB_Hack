@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/credit"
+        android:id="@+id/creditMenu"
         android:icon="@drawable/ic_credit"
         android:title="@string/credits"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/autocredit"
+        android:id="@+id/autocreditMenu"
         android:icon="@drawable/ic_autocredit"
         android:title="@string/car"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/calc"
-        android:icon="@drawable/ic_profile_outline"
+        android:id="@+id/profileMenu"
+        android:icon="@drawable/ic_profile"
         android:title="@string/profile"
         app:showAsAction="ifRoom" />
 </menu>

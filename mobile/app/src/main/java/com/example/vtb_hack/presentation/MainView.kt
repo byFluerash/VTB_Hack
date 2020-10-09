@@ -18,6 +18,7 @@ class MainView : Fragment(R.layout.main_view) {
                 "Granta",
                 "Россия",
                 273310,
+                "Седан",
                 3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             ),
@@ -28,6 +29,7 @@ class MainView : Fragment(R.layout.main_view) {
                 "Camry",
                 "Россия",
                 273310,
+                "Хетчбэк",
                 3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             ),
@@ -38,6 +40,7 @@ class MainView : Fragment(R.layout.main_view) {
                 "X5",
                 "Россия",
                 273310,
+                "Универсал",
                 3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             )
