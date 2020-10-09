@@ -1,1 +1,0 @@
-# VTB_Hack Mobile
