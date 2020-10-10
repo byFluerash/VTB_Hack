@@ -31,7 +31,7 @@
     <string name="second_name">Фамилия</string>
     <string name="fluerash">Флуераш</string>
     <string name="birthday">Дата рождения</string>
-    <string name="_23_04_1999">23.04.1999</string>
+    <string name="_dd_mm_yyyy">yyyy-mm-dd</string>
     <string name="phone">Телефон</string>
     <string name="email_email_example_com">email.email@example.com</string>
     <string name="email">Email</string>
@@ -52,5 +52,12 @@
     <string name="labelEveryMonthPay">Ежемесячный платеж от</string>
     <string name="everyMonthPrice">%1$s ₽</string>
     <string name="get_request">Оформить заявку</string>
-    <string name="_100_000">100 000</string>
+    <string name="_100_000">100000</string>
+    <string name="labelSendRequest">Оформление заявки</string>
+    <string name="labelSumCredit">Сумма кредита</string>
+    <string name="labelInterestRate">Процентная ставка</string>
+    <string name="interestRate">%1$s%%</string>
+    <string name="fillContactInfo">Заполните контактные данные</string>
+    <string name="labelFillInfoHint">На эти адреса и номер телефона будут приходить уведомления и письма от банка.</string>
+    <string name="sendRequest">Отправить заявку</string>
 </resources>

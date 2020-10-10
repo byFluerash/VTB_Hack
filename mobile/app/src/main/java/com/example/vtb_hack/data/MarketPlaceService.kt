@@ -15,4 +15,7 @@ interface MarketPlaceService {
 
     @POST("calculate")
     fun calculate(@Body calculate: Calculate): Single<CalculatePost>
+
+    @POST("carloan")
+    fun postRequest(@Body carloan: Carloan): Single<RequestStatus>
 }

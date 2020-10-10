@@ -69,11 +69,15 @@ class CarPageFragment : Fragment(R.layout.car_page) {
 
         calculate.setOnClickListener {
             if (priceCar != null) {
-                val intent = Intent(context, CreditRequest::class.java)
+                val intent = Intent(context, SecondActivity::class.java)
                 intent.putExtra("priceCar", priceCar)
                 intent.putExtra("nameCar", carName.text)
                 startActivity(intent)
             }
+        }
+
+        back.setOnClickListener {
+            fragmentManager?.popBackStack()
         }
     }
 }
