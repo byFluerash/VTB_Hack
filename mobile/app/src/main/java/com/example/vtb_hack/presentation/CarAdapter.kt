@@ -1,5 +1,6 @@
 package com.example.vtb_hack.presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.vtb_hack.R
 import com.example.vtb_hack.data.Car
+import com.example.vtb_hack.data.CarDB
 import com.example.vtb_hack.setPhoto
 import kotlinx.android.synthetic.main.car_item.*
 import kotlinx.android.synthetic.main.car_item.view.*
 
-class CarAdapter(private val cars: List<Car>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter(private val cars: List<CarDB>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val carName: TextView = itemView.carName
@@ -35,7 +37,12 @@ class CarAdapter(private val cars: List<Car>) : RecyclerView.Adapter<CarAdapter.
         holder.carPhoto.setPhoto(cars[position].photo)
 
         holder.openPage.setOnClickListener {
-            (it.context as MainActivity).supportFragmentManager.beginTransaction().addToBackStack("carList").replace(R.id.mainFragment, CarPageFragment()).commit()
+            val fragment = CarPageFragment()
+            fragment.arguments = Bundle().apply {
+                putLong("id", cars[position].id)
+            }
+
+            (it.context as MainActivity).supportFragmentManager.beginTransaction().addToBackStack("carList").replace(R.id.mainFragment, fragment).commit()
         }
     }
 

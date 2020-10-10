@@ -1,22 +1,30 @@
 package com.example.vtb_hack.presentation
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
 import com.example.vtb_hack.data.Car
-import kotlinx.android.synthetic.main.car_item.*
+import com.example.vtb_hack.data.CarDB
+import com.example.vtb_hack.data.DataBase
+import com.example.vtb_hack.data.RetrofitInstance
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.main_view.*
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class MainView : Fragment(R.layout.main_view) {
 
@@ -25,43 +33,13 @@ class MainView : Fragment(R.layout.main_view) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val cars = listOf(
-            Car(
-                1,
-                "LADA",
-                "Granta",
-                "Россия",
-                273310,
-                "Седан",
-                3,
-                3,
-                Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
-            ),
 
-            Car(
-                2,
-                "Toyota",
-                "Camry",
-                "Россия",
-                273310,
-                "Хетчбэк",
-                3,
-                3,
-                Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
-            ),
-
-            Car(
-                3,
-                "BMW",
-                "X5",
-                "Россия",
-                273310,
-                "Универсал",
-                3,
-                3,
-                Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
-            )
-        )
+        DataBase.getDataBase().carDAO()
+            .getAll()
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext {
+                carRecycler.adapter = CarAdapter(it)
+            }.subscribe()
 
         camera.setOnClickListener {
             Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
@@ -85,14 +63,19 @@ class MainView : Fragment(R.layout.main_view) {
             }
         }
 
-        carRecycler.adapter = CarAdapter(cars)
         val filters = listOf("Марка", "Тип кузова", "Цвет", "5000")
         filterRecycler.adapter = FilterAdapter(filters)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Toast.makeText(context, "Фото сделано", Toast.LENGTH_LONG).show()
+        val bm = BitmapFactory.decodeFile(mCurrentPhotoPath)
+        val baos = ByteArrayOutputStream()
+        bm.compress(Bitmap.CompressFormat.JPEG, 70, baos) // bm is the bitmap object
+        val byteArrayImage: ByteArray = baos.toByteArray()
+        val encodedImage: String = Base64.getEncoder().encodeToString(byteArrayImage)
+
+
     }
 
     lateinit var mCurrentPhotoPath: String

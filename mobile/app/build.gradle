@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.vtb_hack"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -44,22 +44,27 @@ dependencies {
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
 
     // Room
-    implementation "androidx.room:room-runtime:2.2.5"
-    implementation "androidx.room:room-rxjava2:2.2.5"
-    kapt "androidx.room:room-compiler:2.2.5"
-    implementation "androidx.room:room-ktx:2.2.5"
+    // Room
+    def room_version = "2.2.5"
 
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // Moshi
+    implementation("com.squareup.moshi:moshi-kotlin:1.9.3")
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
     // RxJava
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
 
 }
