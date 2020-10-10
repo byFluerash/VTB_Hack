@@ -60,4 +60,8 @@
     <string name="fillContactInfo">Заполните контактные данные</string>
     <string name="labelFillInfoHint">На эти адреса и номер телефона будут приходить уведомления и письма от банка.</string>
     <string name="sendRequest">Отправить заявку</string>
+    <string name="sending_request">Отправка заявки</string>
+    <string name="requestSended">Заявка отправлена</string>
+    <string name="done_hint">Вы можете узнать статус заявки в разделе “Кредиты”</string>
+    <string name="wait">В обработке</string>
 </resources>

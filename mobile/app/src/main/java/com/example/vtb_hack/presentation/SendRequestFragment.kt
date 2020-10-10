@@ -46,6 +46,7 @@ class SendRequestFragment : Fragment(R.layout.request_making) {
                 .subscribe(
                     {
                         Log.d("RequestStatus", it.applicationStatus)
+                        fragmentManager?.beginTransaction()?.replace(R.id.secondFragment, MessageRequestFragment())?.commit()
                     },
                     {
                         it.printStackTrace()
