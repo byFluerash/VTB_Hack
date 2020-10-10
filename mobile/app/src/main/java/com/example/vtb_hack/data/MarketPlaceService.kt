@@ -12,4 +12,7 @@ interface MarketPlaceService {
 
     @POST("car-recognize")
     fun postCar(@Body content: Content): Single<Car>
+
+    @POST("calculate")
+    fun calculate(@Body calculate: Calculate): Single<CalculatePost>
 }

@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/grey">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
 <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->
@@ -26,44 +26,44 @@
 <!--            android:layout_width="250dp"-->
 <!--            android:layout_height="match_parent" />-->
 
-        <SearchView
-            android:id="@+id/searchView"
+<!--        <SearchView-->
+<!--            android:id="@+id/searchView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:queryBackground="@android:color/white"-->
+<!--            android:searchIcon="@drawable/ic_search_outline" />-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+        <LinearLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:queryBackground="@android:color/white"
-            android:searchIcon="@drawable/ic_search_outline" />
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/toolbar"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="56dp"-->
-    <!--        android:background="@color/colorPrimary"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/car_list"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
-    <!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_marginStart="16dp"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_marginTop="16dp"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:text="@string/car_list"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:textColor="@android:color/white"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:textSize="18sp" />&ndash;&gt;-->
+                    <Space
+                        android:layout_width="250dp"
+                        android:layout_height="match_parent" />
 
-    <!--        &lt;!&ndash;        <Space&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_width="250dp"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_height="match_parent" />&ndash;&gt;-->
-
-    <!--        &lt;!&ndash;        <ImageButton&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:id="@+id/search"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:layout_gravity="center_vertical"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:backgroundTint="@android:color/transparent"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            android:src="@drawable/ic_search_outline"&ndash;&gt;-->
-    <!--        &lt;!&ndash;            tools:ignore="ContentDescription" />&ndash;&gt;-->
-    <!--    </LinearLayout>-->
+                    <ImageButton
+                        android:id="@+id/search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/ic_search_outline"
+                        tools:ignore="ContentDescription" />
+        </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llFilter"

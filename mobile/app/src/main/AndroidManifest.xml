@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.MainActivity" />
+        <activity android:name=".presentation.CreditRequest" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

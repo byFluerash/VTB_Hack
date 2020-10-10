@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/carPrice"
-        android:textColor="@color/darkgray"
+        android:textColor="@color/darkGrey"
         app:layout_constraintStart_toStartOf="@id/carName"
         app:layout_constraintTop_toBottomOf="@id/carName"
         tools:text="от 565 000" />

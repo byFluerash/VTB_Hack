@@ -8,7 +8,7 @@
     <string name="car">Авто</string>
     <string name="calc">Калькулятор</string>
     <string name="carName">%1$s %2$s</string>
-    <string name="carPrice">от %1$d ₽</string>
+    <string name="carPrice">от %1$s ₽</string>
     <string name="brand">%1$s</string>
     <string name="profile">Профиль</string>
     <string name="countryLabel">Страна</string>
@@ -35,4 +35,22 @@
     <string name="phone">Телефон</string>
     <string name="email_email_example_com">email.email@example.com</string>
     <string name="email">Email</string>
+    <string name="request_credit">Заявка на кредит</string>
+    <string name="labelCountCASCO">Стоимость КАСКО</string>
+    <string name="countCASCO">%1$s ₽</string>
+    <string name="labelTotal">ИТОГО</string>
+    <string name="total">%1$s ₽</string>
+    <string name="first_fee">Первоначальный взнос</string>
+    <string name="choose_first_fee">Укажите размер первоначального взноса</string>
+    <string name="_50_000_610_000">от 50 000 ₽ до 610 000 ₽</string>
+    <string name="maxPriceFee">от 50 000 ₽ до %1$s ₽</string>
+    <string name="for_a_period">На срок</string>
+    <string name="hint_credit">Чем больше срок кредита, тем меньше ежемесячный платёж</string>
+    <string name="periodCredit">%1$d лет</string>
+    <string name="_1">1 год</string>
+    <string name="_7">7 лет</string>
+    <string name="labelEveryMonthPay">Ежемесячный платеж от</string>
+    <string name="everyMonthPrice">%1$s ₽</string>
+    <string name="get_request">Оформить заявку</string>
+    <string name="_100_000">100 000</string>
 </resources>

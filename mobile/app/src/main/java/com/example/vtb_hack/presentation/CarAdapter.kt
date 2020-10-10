@@ -15,6 +15,7 @@ import com.example.vtb_hack.data.CarDB
 import com.example.vtb_hack.setPhoto
 import kotlinx.android.synthetic.main.car_item.*
 import kotlinx.android.synthetic.main.car_item.view.*
+import java.text.NumberFormat
 
 class CarAdapter(private val cars: List<CarDB>) : RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
@@ -31,9 +32,11 @@ class CarAdapter(private val cars: List<CarDB>) : RecyclerView.Adapter<CarAdapte
         return ViewHolder(itemView)
     }
 
+    private val format = NumberFormat.getInstance()
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.carName.text = holder.itemView.context.getString(R.string.carName, cars[position].brand, cars[position].model)
-        holder.carPrice.text = holder.itemView.context.getString(R.string.carPrice, cars[position].price)
+        holder.carPrice.text = holder.itemView.context.getString(R.string.carPrice, format.format(cars[position].price))
         holder.carPhoto.setPhoto(cars[position].photo)
 
         holder.openPage.setOnClickListener {
