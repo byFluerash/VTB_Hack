@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="32dp"
+    android:background="@drawable/background_rectangle_rounded">
 
-    <LinearLayout
-        android:id="@+id/choose_photo"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/labelChoosePhoto"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_marginTop="32dp"
-        android:layout_marginStart="24dp">
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/choose_photo"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/upload" />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="@string/some_text"
+        android:textColor="@color/darkgray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelChoosePhoto" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="24dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/choose_photo"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
-            android:textStyle="normal" />
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
         android:id="@+id/create_photo"
-        android:layout_below="@id/choose_photo"
-        android:layout_marginTop="43dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="32dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_rectangle_rounded"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:text="@string/open_camera"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/camera"
-            android:layout_gravity="center_vertical"/>
+    <Button
+        android:id="@+id/choose_photo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorPrimaryLight"
+        android:text="@string/choose_photo"
+        app:layout_constraintTop_toBottomOf="@id/create_photo"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="sans-serif"
-            android:text="@string/create_photo"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
-            android:textStyle="normal" />
-    </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,5 @@
     <color name="grey">#E4E8EE</color>
     <color name="darkgray">#222222</color>
     <color name="carTTXValue">#606060</color>
+    <color name="darkwhite">#F6F6F6</color>
 </resources>

@@ -21,6 +21,18 @@
     <string name="countColorsValue">%1$d</string>
     <string name="buy_in_credit">Покупка в кредит</string>
     <string name="calculate">Рассчитать</string>
-    <string name="choose_photo">Выбрать фото</string>
-    <string name="create_photo">Сделать снимок</string>
+    <string name="choose_photo">Выбрать фото из галереи</string>
+    <string name="some_text">Система распознает автомобиль и покажет подходящие предложения</string>
+    <string name="open_camera">Открыть камеру</string>
+    <string name="contact_data">Контактные данные</string>
+    <string name="hint">На эти адреса и номер телефона приходят уведомления и письма.</string>
+    <string name="labelName">Имя</string>
+    <string name="daniil">Даниил</string>
+    <string name="second_name">Фамилия</string>
+    <string name="fluerash">Флуераш</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="_23_04_1999">23.04.1999</string>
+    <string name="phone">Телефон</string>
+    <string name="email_email_example_com">email.email@example.com</string>
+    <string name="email">Email</string>
 </resources>

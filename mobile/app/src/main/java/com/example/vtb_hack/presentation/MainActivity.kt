@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.creditMenu -> {
-
                 }
                 R.id.autocreditMenu -> {
                     supportFragmentManager.beginTransaction()
-                        .add(R.id.mainFragment, MainView()).commit()
+                        .replace(R.id.mainFragment, MainView()).commit()
                 }
                 R.id.profileMenu -> {
-
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.mainFragment, ProfileFragment()).commit()
                 }
             }
 
