@@ -11,4 +11,14 @@
     <string name="carPrice">от %1$d ₽</string>
     <string name="brand">%1$s</string>
     <string name="profile">Профиль</string>
+    <string name="countryLabel">Страна</string>
+    <string name="countryValue">%1$s</string>
+    <string name="bodyTypeLabel">Тип кузова</string>
+    <string name="bodyTypeValue">%1$s</string>
+    <string name="countDoorsLabel">Количество дверей</string>
+    <string name="countDoorsValue">%1$d</string>
+    <string name="countColorsLabel">Размер цветовой палитры</string>
+    <string name="countColorsValue">%1$d</string>
+    <string name="buy_in_credit">Покупка в кредит</string>
+    <string name="calculate">Рассчитать</string>
 </resources>

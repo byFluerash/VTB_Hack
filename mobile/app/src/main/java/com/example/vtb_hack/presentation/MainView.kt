@@ -11,6 +11,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
 import com.example.vtb_hack.data.Car
+import kotlinx.android.synthetic.main.car_item.*
 import kotlinx.android.synthetic.main.main_view.*
 import java.io.File
 import java.io.IOException
@@ -33,6 +34,7 @@ class MainView : Fragment(R.layout.main_view) {
                 273310,
                 "Седан",
                 3,
+                3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             ),
 
@@ -44,6 +46,7 @@ class MainView : Fragment(R.layout.main_view) {
                 273310,
                 "Хетчбэк",
                 3,
+                3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             ),
 
@@ -54,6 +57,7 @@ class MainView : Fragment(R.layout.main_view) {
                 "Россия",
                 273310,
                 "Универсал",
+                3,
                 3,
                 Uri.parse("https://tradeins.space/uploads/photo/511795/hetch.png")
             )

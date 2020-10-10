@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
             .doOnComplete {
                 Thread.sleep(1000)
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
             .subscribe()
     }

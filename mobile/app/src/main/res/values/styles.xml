@@ -9,4 +9,14 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
+    <style name="CarTTXField">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="CarTTXValue">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/carTTXValue</item>
+    </style>
+
 </resources>

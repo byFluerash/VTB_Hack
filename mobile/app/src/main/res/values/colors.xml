@@ -6,4 +6,5 @@
     <color name="coldGrey">#F3F4F7</color>
     <color name="grey">#E4E8EE</color>
     <color name="darkgray">#222222</color>
+    <color name="carTTXValue">#606060</color>
 </resources>

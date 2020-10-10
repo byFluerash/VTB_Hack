@@ -9,6 +9,7 @@ data class Car(
     val country: String,
     val price: Int,
     val bodyType: String,
+    val doorsCount: Int,
     val colorsCount: Int,
     val photo: Uri
 )
