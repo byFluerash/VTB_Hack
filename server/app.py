@@ -8,6 +8,22 @@ import requests
 app = Flask(__name__)
 
 api_key = "a41fe4677241147b63c0917cba17dc20"
+probabilities_keys = [
+    'BMW 3',
+    'BMW 5',
+    'Cadillac ESCALADE',
+    'Chevrolet Tahoe',
+    'Hyundai Genesis',
+    'Jaguar F-PACE',
+    'KIA K5',
+    'KIA Optima',
+    'KIA Sportage',
+    'Land Rover RANGE ROVER VELAR',
+    'Mazda 3',
+    'Mazda 6',
+    'Mercedes A',
+    'Toyota Camry'
+]
 
 
 class Car:
@@ -79,6 +95,34 @@ def marketplace():
     jsonpickle.set_encoder_options('json', ensure_ascii=False)
     return jsonpickle.encode(cars)
 
+@app.route('/car-recognize', methods=['POST'])
+def carRecognize():
+    body = request.get_json()
+    url = 'https://gw.hackathon.vtb.ru/vtb/hackathon/car-recognize'
+    headers = {
+        'x-ibm-client-id': api_key,
+        'content-type': "application/json",
+        'accept': "application/json"
+    }
+    response = requests.post(url, headers=headers, json=body)
+    jsonresponse = json.loads(response.text)
+
+    probabilities = jsonresponse["probabilities"]
+
+    maxProb = -1.0
+    maxProbKey = ""
+
+    for key in probabilities_keys:
+        prob = probabilities[key]
+        if prob > maxProb:
+            maxProb = prob
+            maxProbKey = key
+
+    car = next((x for x in cars if x.markTitle + " " + x.modelTitle == maxProbKey), None)
+
+    jsonpickle.set_preferred_backend('json')
+    jsonpickle.set_encoder_options('json', ensure_ascii=False)
+    return jsonpickle.encode(car)
 
 @app.route("/")
 def home():
