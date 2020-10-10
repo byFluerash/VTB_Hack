@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 api_key = "a41fe4677241147b63c0917cba17dc20"
 
+
 class Car:
 
     def __init__(self, markTitle, country, price, modelTitle, colorsCount, bodyTitle, doorsCount, widgetPhoto, mainPhoto):
@@ -24,7 +25,7 @@ class Car:
 
 
 @app.route('/marketplace', methods=['GET'])
-def get_tasks():
+def marketplace():
 
     url = 'https://gw.hackathon.vtb.ru/vtb/hackathon/marketplace'
     headers = {
@@ -40,7 +41,7 @@ def get_tasks():
         _markTitle = mark["title"]
         _country = mark["country"]["title"]
         for model in mark["models"]:
-            _price = model["minprice"]
+            _price = model["minPrice"]
             _modelTitle = model["title"]
             _colorsCount = model["colorsCount"]
             for body in model["bodies"]:
@@ -65,12 +66,13 @@ def get_tasks():
                                 _mainPhoto = model["renderPhotos"]["main"]["crossover"]["path"]
                             except:
                                 try:
-                                   _widgetPhoto = model["renderPhotos"]["render_widget_right"]["hatchback5d"]["path"]
-                                   _mainPhoto = model["renderPhotos"]["main"]["hatchback5d"]["path"]
+                                    _widgetPhoto = model["renderPhotos"]["render_widget_right"]["hatchback5d"]["path"]
+                                    _mainPhoto = model["renderPhotos"]["main"]["hatchback5d"]["path"]
                                 except:
                                     _widgetPhoto = ""
                                     _mainPhoto = ""
-                car = Car(_markTitle, _country, _price, _modelTitle, _colorsCount, _bodyTitle, _doorsCount, _widgetPhoto, _mainPhoto)
+                car = Car(_markTitle, _country, _price, _modelTitle, _colorsCount,
+                          _bodyTitle, _doorsCount, _widgetPhoto, _mainPhoto)
                 cars.append(car)
 
     jsonpickle.set_preferred_backend('json')
