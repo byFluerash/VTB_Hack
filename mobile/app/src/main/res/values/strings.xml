@@ -21,4 +21,6 @@
     <string name="countColorsValue">%1$d</string>
     <string name="buy_in_credit">Покупка в кредит</string>
     <string name="calculate">Рассчитать</string>
+    <string name="choose_photo">Выбрать фото</string>
+    <string name="create_photo">Сделать снимок</string>
 </resources>
