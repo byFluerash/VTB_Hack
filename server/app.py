@@ -219,7 +219,8 @@ def carloan():
 @app.route('/credits', methods=['POST'])
 def addCredit():
     body = request.get_json()
-    credit = Credit(body["car"], body["loanAmount"], body["state"])
+    credit = Credit(body["car"], body["loanAmount"], "Одобрено")
+
     credits.append(credit)
     jsonpickle.set_preferred_backend('json')
     jsonpickle.set_encoder_options('json', ensure_ascii=False)
