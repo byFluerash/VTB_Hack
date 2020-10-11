@@ -25,16 +25,30 @@
         android:id="@+id/backgroundPhoto"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/darkWhite"
+        android:background="@color/darkWhite2"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/fluerashDaniil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gevorkyan_narek"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/photo"
+        app:layout_constraintBottom_toBottomOf="@id/backgroundPhoto"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="@id/backgroundPhoto"
+        app:layout_constraintEnd_toEndOf="@id/backgroundPhoto"/>
 
     <ImageView
         android:id="@+id/photo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         app:layout_constraintBottom_toBottomOf="@id/backgroundPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/avatar"
+        android:layout_marginBottom="20dp"
         app:layout_constraintTop_toTopOf="@id/backgroundPhoto"
         tools:ignore="ContentDescription" />
 
@@ -57,7 +71,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:text="@string/hint"
-        android:textColor="@color/darkGrey"
+        android:textColor="@color/carTTXValue"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/daniil"
+        android:text="@string/narek"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/labelName" />
 
@@ -113,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/fluerash"
+        android:text="@string/gevorkyan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/labelSecondName" />
 

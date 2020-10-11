@@ -8,6 +8,7 @@
     <color name="darkGrey">#222222</color>
     <color name="carTTXValue">#606060</color>
     <color name="darkWhite">#F6F6F6</color>
+    <color name="darkWhite2">#E4E4E4</color>
     <color name="gayGrey">#999EA9</color>
     <color name="green">#33985D</color>
 </resources>

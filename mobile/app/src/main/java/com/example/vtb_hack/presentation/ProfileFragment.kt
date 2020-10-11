@@ -11,9 +11,9 @@ class ProfileFragment: Fragment(R.layout.profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Glide.with(context!!)
-            .load(R.drawable.ic_nerd_man_with_curly_hair_and_circular_eyeglasses_avatar)
-            .centerInside()
-            .into(photo)
+//        Glide.with(context!!)
+//            .load(R.drawable.)
+//            .centerInside()
+//            .into(photo)
     }
 }

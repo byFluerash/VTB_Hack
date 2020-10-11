@@ -1,7 +1,6 @@
 package com.example.vtb_hack.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
@@ -24,6 +23,14 @@ class SendRequestFragment : Fragment(R.layout.request_making) {
         val carPrice = arguments!!.getDouble("carPrice")
         val fee = arguments!!.getString("fee")!!.toDouble()
         val brand = arguments!!.getString("brand")
+
+
+        fieldEmail.setText(getString(R.string.email_email_example_com))
+        fieldName.setText(getString(R.string.narek))
+        fieldSecondName.setText(getString(R.string.gevorkyan))
+        fieldBirthday.setText(getString(R.string.year_example))
+        fieldPhone.setText(getString(R.string.number))
+
 
         price.text = getString(R.string.everyMonthPrice, format.format(loanAmount))
         interestRate.text = getString(R.string.interestRate, contractRate.toString())
