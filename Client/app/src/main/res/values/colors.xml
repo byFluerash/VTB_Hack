@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0B1D37</color>
+    <color name="colorPrimaryLight">#3A83F1</color>
+    <color name="colorAccent">#3A83F1</color>
+    <color name="coldGrey">#F3F4F7</color>
+    <color name="grey">#E4E8EE</color>
+    <color name="darkGrey">#222222</color>
+    <color name="carTTXValue">#606060</color>
+    <color name="darkWhite">#F6F6F6</color>
+    <color name="darkWhite2">#E4E4E4</color>
+    <color name="gayGrey">#999EA9</color>
+    <color name="green">#33985D</color>
+</resources>
