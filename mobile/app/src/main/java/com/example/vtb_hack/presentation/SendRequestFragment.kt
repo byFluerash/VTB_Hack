@@ -23,8 +23,7 @@ class SendRequestFragment : Fragment(R.layout.request_making) {
         val carPrice = arguments!!.getDouble("carPrice")
         val fee = arguments!!.getString("fee")!!.toDouble()
         val brand = arguments!!.getString("brand")
-
-
+        
         fieldEmail.setText(getString(R.string.email_email_example_com))
         fieldName.setText(getString(R.string.narek))
         fieldSecondName.setText(getString(R.string.gevorkyan))

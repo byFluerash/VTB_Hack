@@ -68,8 +68,6 @@ class CreditRequestFragment : Fragment(R.layout.credit_making) {
                             getString(R.string.everyMonthPrice, format.format(it.monthPayment))
                         contractRate = it.contractRate
                         loanAmount = it.loanAmount
-                        Log.d("ContractRate", contractRate.toString())
-                        Log.d("LoanAmount", loanAmount.toString())
                     },
                     {
                         it.printStackTrace()
@@ -88,7 +86,7 @@ class CreditRequestFragment : Fragment(R.layout.credit_making) {
                     putInt("loanAmount", loanAmount!!)
                     putDouble("contractRate", contractRate!!)
                     putString("fee", fee.text.toString())
-                    putString("brand", carName.text.toString().split(" ")[0])
+                    putString("brand", carName.text.toString())
                     putInt("term", seekBar.progress)
                     putDouble("carPrice", carPrice.toDouble())
                 }
