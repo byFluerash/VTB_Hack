@@ -44,7 +44,7 @@ class MainView : Fragment(R.layout.main_view) {
             photoDialogFragment.show(fragmentManager!!, "photoPicker")
         }
 
-        val filters = listOf("Марка", "Тип кузова", "Цвет", "5000")
+        val filters = listOf("Марка", "Тип кузова", "Страна", )
         filterRecycler.adapter = FilterAdapter(filters)
     }
 
@@ -97,30 +97,12 @@ class MainView : Fragment(R.layout.main_view) {
         encodedImage = Base64.getEncoder().encodeToString(byteArrayImage)
         encodedImage.replace("\n", "")
 
-        val res = RetrofitInstance.instance.postCar(Content(encodedImage))
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                {
-                    val fragment = CarPageFragment()
-                    fragment.arguments = Bundle().apply {
-                        putString("model", it.model)
-                        putString("country", it.country)
-                        putString("bodyType", it.bodyType)
-                        putString("brand", it.brand)
-                        putInt("colorsCount", it.colorsCount)
-                        putInt("price", it.price)
-                        putInt("doorsCount", it.doorsCount)
-                        putString("bigPhoto", it.bigPhoto.toString())
-                    }
+        val fragment = CarPageFragment()
+        fragment.arguments = Bundle().apply {
+            putString("encodedImage", encodedImage)
+        }
 
-                    fragmentManager!!.beginTransaction().addToBackStack("mainView")
-                        .replace(R.id.mainFragment, fragment).commit()
-                },
-                {
-                    Toast.makeText(context, "Автомобиль не распознан", Toast.LENGTH_SHORT)
-                        .show()
-                }
-            )
+        fragmentManager!!.beginTransaction().addToBackStack("mainView")
+            .replace(R.id.mainFragment, fragment).commit()
     }
 }

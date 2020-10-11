@@ -4,9 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
+import com.example.vtb_hack.data.Content
 import com.example.vtb_hack.data.DataBase
+import com.example.vtb_hack.data.RetrofitInstance
 import com.example.vtb_hack.setPhoto
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -21,30 +24,47 @@ class CarPageFragment : Fragment(R.layout.car_page) {
         val format = NumberFormat.getInstance()
 
         var priceCar: Int? = null
+        content.visibility = View.INVISIBLE
 
-        if (arguments?.getString("model") != null) {
-            carPhoto.setPhoto(Uri.parse(arguments?.getString("bigPhoto")))
+        progressBar.visibility = View.VISIBLE
 
-            title.text = getString(
-                R.string.carName,
-                arguments?.getString("brand"),
-                arguments?.getString("model")
-            )
+        if (arguments?.getString("encodedImage") != null) {
 
-            carName.text = getString(
-                R.string.carName,
-                arguments?.getString("brand"),
-                arguments?.getString("model")
-            )
-            carPrice.text = getString(R.string.carPrice, format.format(arguments?.getInt("price")))
-            priceCar = arguments?.getInt("price")
-            countryValue.text = getString(R.string.countryValue, arguments?.getString("country"))
-            bodyTypeValue.text = getString(R.string.bodyTypeValue, arguments?.getString("bodyType"))
-            countDoorValue.text =
-                getString(R.string.countDoorsValue, arguments?.getInt("doorsCount"))
-            countColorsValue.text =
-                getString(R.string.countColorsValue, arguments?.getInt("colorsCount"))
+            val res = RetrofitInstance.instance.postCar(Content(arguments?.getString("encodedImage")!!))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        carPhoto.setPhoto(it.bigPhoto)
 
+                        title.text = getString(
+                            R.string.carName,
+                            it.brand,
+                            it.model
+                        )
+
+                        carName.text = getString(
+                            R.string.carName,
+                            it.brand,
+                            it.model
+                        )
+                        carPrice.text = getString(R.string.carPrice, format.format(it.price))
+                        priceCar = it.price
+                        countryValue.text = getString(R.string.countryValue, it.country)
+                        bodyTypeValue.text = getString(R.string.bodyTypeValue, it.bodyType)
+                        countDoorValue.text =
+                            getString(R.string.countDoorsValue, it.doorsCount)
+                        countColorsValue.text =
+                            getString(R.string.countColorsValue, it.colorsCount)
+                        content.visibility = View.VISIBLE
+                        progressBar.visibility = View.INVISIBLE
+                    },
+                    {
+                        Toast.makeText(context, "Автомобиль не распознан", Toast.LENGTH_SHORT)
+                            .show()
+                        fragmentManager?.popBackStack()
+                    }
+                )
 
         } else {
             val id = arguments!!.getLong("id")
@@ -63,6 +83,8 @@ class CarPageFragment : Fragment(R.layout.car_page) {
                     bodyTypeValue.text = getString(R.string.bodyTypeValue, it.bodyType)
                     countDoorValue.text = getString(R.string.countDoorsValue, it.doorsCount)
                     countColorsValue.text = getString(R.string.countColorsValue, it.colorsCount)
+                    content.visibility = View.VISIBLE
+                    progressBar.visibility = View.INVISIBLE
                 }
                 .subscribe()
         }
