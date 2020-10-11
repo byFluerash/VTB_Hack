@@ -64,4 +64,6 @@
     <string name="requestSended">Заявка отправлена</string>
     <string name="done_hint">Вы можете узнать статус заявки в разделе “Кредиты”</string>
     <string name="wait">В обработке</string>
+    <string name="myCredits">Мои кредиты</string>
+    <string name="state">%1$s</string>
 </resources>

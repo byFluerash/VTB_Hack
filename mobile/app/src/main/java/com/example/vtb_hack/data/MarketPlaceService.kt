@@ -10,6 +10,12 @@ interface MarketPlaceService {
     @GET("marketplace")
     fun getCars(): Observable<List<Car>>
 
+    @GET("credits")
+    fun getCredits(): Single<List<Credit>>
+
+    @POST("credits")
+    fun postCredit(@Body creditPost: CreditPost): Single<Credit>
+
     @POST("car-recognize")
     fun postCar(@Body content: Content): Single<Car>
 

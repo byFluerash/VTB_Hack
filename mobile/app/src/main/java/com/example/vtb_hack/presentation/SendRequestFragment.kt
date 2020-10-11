@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
 import com.example.vtb_hack.data.Carloan
+import com.example.vtb_hack.data.CreditPost
 import com.example.vtb_hack.data.RetrofitInstance
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.request_making.*
@@ -45,8 +46,22 @@ class SendRequestFragment : Fragment(R.layout.request_making) {
             ).subscribeOn(Schedulers.io())
                 .subscribe(
                     {
-                        Log.d("RequestStatus", it.applicationStatus)
-                        fragmentManager?.beginTransaction()?.replace(R.id.secondFragment, MessageRequestFragment())?.commit()
+                        RetrofitInstance.instance.postCredit(
+                            CreditPost(
+                                brand,
+                                loanAmount,
+                                it.applicationStatus
+                            )
+                        ).subscribeOn(Schedulers.io())
+                            .subscribe({
+
+                            }, {
+                                it.printStackTrace()
+                            })
+
+
+                        fragmentManager?.beginTransaction()
+                            ?.replace(R.id.secondFragment, MessageRequestFragment())?.commit()
                     },
                     {
                         it.printStackTrace()

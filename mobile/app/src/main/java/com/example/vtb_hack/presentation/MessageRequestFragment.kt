@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.vtb_hack.R
-import kotlinx.android.synthetic.main.request_making.*
 import kotlinx.android.synthetic.main.request_making.back
 import kotlinx.android.synthetic.main.request_message.*
 

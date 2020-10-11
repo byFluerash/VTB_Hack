@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.creditMenu -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.mainFragment, MyCreditsFragment()).commit()
                 }
                 R.id.autocreditMenu -> {
                     supportFragmentManager.beginTransaction()
