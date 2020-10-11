@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VTB_Hack</string>
+    <string name="app_name">ВТБ Авто</string>
     <string name="vtp_auto_caps">ВТБ АВТО</string>
     <string name="car_list">Список авто</string>
     <string name="price">Цена</string>
