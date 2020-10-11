@@ -1,9 +1,13 @@
 package com.example.vtb_hack.presentation
 
+import android.app.Activity
+import android.graphics.Color
+import android.icu.text.NumberFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vtb_hack.R
 import com.example.vtb_hack.data.Credit
@@ -22,10 +26,17 @@ class CreditAdapter(var credit: List<Credit>) : RecyclerView.Adapter<CreditAdapt
         return ViewHolder(itemView)
     }
 
+    val format = NumberFormat.getInstance()
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.carName.text = credit[position].carName
         holder.state.text = credit[position].state
-        holder.sum.text = credit[position].sum.toString()
+        if (credit[position].state == "Отказано") {
+            holder.state.setTextColor(Color.parseColor("#EB5757"))
+        } else {
+            holder.state.setTextColor(Color.parseColor("#4CBEA3"))
+        }
+        holder.sum.text = (holder.itemView.context as Activity).getString(R.string.everyMonthPrice,  format.format(credit[position].sum))
     }
 
     override fun getItemCount() = credit.size

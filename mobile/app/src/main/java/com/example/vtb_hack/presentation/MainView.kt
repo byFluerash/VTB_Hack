@@ -92,7 +92,7 @@ class MainView : Fragment(R.layout.main_view) {
             }
         }
         val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG, 70, baos) // bm is the bitmap object
+        bm.compress(Bitmap.CompressFormat.JPEG, 50, baos) // bm is the bitmap object
         val byteArrayImage: ByteArray = baos.toByteArray()
         encodedImage = Base64.getEncoder().encodeToString(byteArrayImage)
         encodedImage.replace("\n", "")
